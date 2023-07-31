@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 2</title>
+</head>
+<body>
+    <p>Sum : <span id="sumValue">0</span> </p>
+    <p>Avg: <span id="averageValue">0</span> </p>
+    <button onclick="grade()">Grade</button>
+    <script>
+        var sum = 0;
+        var average = 0;
+        var marks = [];
+
+        for (let index = 0; index < 5; index++) {
+            let User_Input = prompt('Enter marks[${index + 1}]');
+            User_Input = parseInt(User_Input)
+            marks.push(User_Input);
+            sum += User_Input;
+        }
+
+        average = sum / 5;
+
+        document.getElementById("sumValue").innerText = sum;
+        document.getElementById("averageValue").innerText = average;
+        
+        function grade() {
+            if (average > 30){
+                alert("passed");
+            } else {
+                alert("Failed");
+            }
+        }
+    </script>
+</body>
+</html>
